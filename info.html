@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="browser-reset.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="icon" type="image/x-icon" href="Site—Function/Icons/3my-favicon.svg">
+    <title>info</title>
+</head>
+<body>
+    <div class="loading-screen"></div>
+    <div class="after-load" id="loadscreen">
+    <div class="loader" style="top: 50%;" id="loader">0</div>
+    </div>
+    <div class="info-wrapper">
+        <div class="navbar-container">
+            <div class="txt-block flex align-center">
+                <h1>O (GMT+8)&nbsp</h1>
+                <h3></h3>
+            </div>
+            <div class="txt-block">
+                <a href="index.html">
+                    <h1 class="hover">3my — Studio</h1>
+                </a>
+            </div>
+            <div class="txt-block">
+                <a href="index.html">
+                    <h1 class="hover">Home</h1>
+                </a>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="margin-lr-35 flex space-between">
+                <div class="info-pic-container center">
+                    <div class="position-sticky">
+                        <img class="minus-50-percent" src="Site—Function/image/Emy-Polariod.webp" loading="lazy" alt="">
+                    </div>
+                </div>
+                <div class="info-txt-container">
+                    <div class="spacer-40"></div>
+                    <h1>Prima Saujana</h1>
+                    <h1>Kajang 43000, Selangor</h1>
+                     <a href="tel:60124989164"><h1 class="hover underline">T: + [60]  12 - 498 9164</h1></a>
+                    <a href="mailto:hello@3mystudio.com?subject = Feedback&body = Message">
+                        <h1 class="hover underline">hello@3mystudio.com</h1>
+                    </a>
+                    <div class="spacer-40"></div>
+                    <h1>Azme Rahmat</h1>
+                    <h1>Born in 1995, Kuala Lumpur, Malaysia. Worked in a Malaysian niche video marketing advertising company, MTAS SDN BHD (M.T.A.S. 2017)</h1>
+                    <div class="spacer-40"></div>
+                    <h1>Azme is a multi-talented creative with a passion for visual arts and a keen eye for capturing moments through photography. With a skill set that encompasses photography, photo and video editing, as well as social media design.</h1>
+                    <div class="spacer-20"></div>
+                    <h1>As a photographer, Azme has honed their ability to create stunning images that evoke emotion and tell stories.</h1>
+                    <div class="spacer-20"></div>
+                    <h1>In addition to photography, Azme possesses a mastery of photo and video editing techniques. They skillfully transform raw footage and images into polished works of art, enhancing colors, adjusting lighting, and adding visual effects to bring out the true essence of each piece.</h1>
+                    <div class="spacer-20"></div>
+                    <h1>Beyond the realm of digital arts, Azme also enjoys exploring their creativity through simple art latte. With a playful touch, they can turn a regular cup of coffee into a delightful piece of temporary artwork, capturing the essence of their fun-loving spirit.</h1>
+                    <div class="spacer-20"></div>
+                    <h1>Azme is constantly seeking new ways to express their creativity and is committed to delivering high-quality visual content that exceeds client expectations. Whether it's capturing special moments, refining visuals through editing, or adding a touch of whimsy to a cup of coffee, Azme is dedicated to producing work that leaves a lasting impression.</h1>
+                    <div class="spacer-40"></div>
+                    <div class="flex">
+                        <h1>If you would like to contact us, please send an email to:
+                            <a href="mailto:hello@3mystudio.com?subject = Feedback&body = Message">
+                                <h1 class="hover underline">hello@3mystudio.com</h1>
+                            </a>
+                            The 3my—Studio occasionally takes on interns, to submit your work, please send a CV and a digital portfolio.
+                        </h1>
+                    </div>
+                    <div class="spacer-40"></div>
+                    <h1>© 2023 3my Studio, all rights reserved</h1>
+                    <h1>Designer: Hakim Mohamad</h1>
+                    <h1 class="flex">Developer:
+                        <a class="underline" href="https://thestartup-3-1.webflow.io/" target="_blank"><h1 class="hover">TheStartup.Site</h1></a>
+                    </h1>
+                    <div class="spacer-40"></div>
+                    <div class="spacer-40"></div>
+                    <div class="spacer-40"></div>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    const currentTime = () => {
+    const element = document.querySelector("h3");
+
+    let date = new Date(),
+        hours = date.getHours(),
+        minutes = date.getMinutes(),
+        seconds = date.getSeconds();
+
+//make 12 hour clock
+let day;
+day = hours < 12 ? "AM" : "PM";
+hours = hours > 12 ? (hours - 12) : hours;
+hours = hours == 0 ? (hours = 12) : hours;
+
+//add 0 if value is less then 10
+hours = hours <10 ? `0${hours}` : hours;
+minutes = minutes < 10 ? `0${minutes}` : minutes;
+seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+element.textContent = `${hours}:${minutes}:${seconds} ${day}`;
+};
+currentTime();
+setInterval(currentTime, 50);
+
+var counting = setInterval(function() {
+  var loader = document.getElementById("loader");
+  var currval = parseInt(loader.innerHTML);
+  var Width = 100 - currval;
+  var loadscreen = document.getElementById("loadscreen");
+  loader.innerHTML = ++currval;
+  if (currval === 100) {
+    clearInterval(counting);
+    loadscreen.style.display = "none";
+  }
+  loadscreen.style.transition = "0.1s";
+  loadscreen.style.width = Width + "%";
+}, 10);
+</script>
+</html>

@@ -1,0 +1,120 @@
+/* --- Desktop View --- */
+
+.navbar-container {
+    background: #FCFCFC;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    z-index: 99;
+    top: 0;
+}
+.info-nav {
+    background: #FCFCFC;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.info-footer {
+    background: #FCFCFC;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+}
+
+
+img {
+    width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+img:hover {
+    cursor: pointer;
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+.no-black {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+
+.figure-hover:hover .figure-hover-child {
+    color: #A1A1A1
+}
+
+
+/* INFO PAGE */
+.minus-50-percent {
+  width: 600px;
+  height: auto;
+}
+.info-pic-container {
+   width: 67%;
+}
+.info-txt-container {
+  width: 390px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* PROJECT PAGE */
+.scroll-wrapper {
+    white-space: nowrap;
+    overflow: auto;
+}
+.scroll-item {
+    width: 100vw;
+    height: 100vh;
+}
+.height-91-percent {
+    height: 100%;
+}
+.height-100vh {
+    height: 90vh;
+}
+.padding-87 {
+    padding: 87px 0px 87px 0px;
+}
+.inline-block {
+    display: inline-block;
+}
+.scroll-snap {
+    scroll-snap-align: start;
+}
+.scroll-container {
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
+
+.project-item-wrapper {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img, .project-item-placement {
+    height: auto;
+}
+

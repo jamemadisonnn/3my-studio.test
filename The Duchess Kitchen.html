@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="browser-reset.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="icon" type="image/x-icon" href="Site—Function/Icons/3my-favicon.svg">
+    <title>Ombre Elena</title>
+</head>
+<body>
+    <div class="loading-screen"></div>
+    <div class="after-load" id="loadscreen">
+    <div class="loader" style="top: 50%;" id="loader">0</div>
+    </div>
+    <div class="info-nav">
+        <div class="txt-block flex align-center">
+            <h1>O (GMT+8)&nbsp</h1>
+            <h3></h3>
+        </div>
+        <div class="txt-block">
+            <a href="index.html">
+                <h1 class="hover">3my — Studio</h1>
+            </a>
+        </div>
+        <div class="txt-block">
+            <a href="index.html">
+                <h1 class="hover">Home</h1>
+            </a>
+        </div>
+    </div>
+    <div class="scroll-wrapper scroll-container">
+        <div class="scroll-item inline-block scroll-snap">
+            <div class="project-item-wrapper">
+                <div class="project-item-placement">
+                    <img class="no-black" src="Site—Function/image/The Dutches Kitchen/Dutches-01.webp" alt="" loading="lazy">
+                        <div class="spacer-10"></div>
+                    <div class="flex space-between"><h1 class="figure-hover-child">[A02/20]</h1><h1 class="figure-hover-child">＋</h1></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-item inline-block scroll-snap">
+            <div class="project-item-wrapper">
+                <div class="project-item-placement">
+                    <img class="no-black" src="Site—Function/image/elena-cover.webp" alt="" loading="lazy">
+                        <div class="spacer-10"></div>
+                    <div class="flex space-between"><h1 class="figure-hover-child">[A02/20]</h1><h1 class="figure-hover-child">＋</h1></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-fixed">
+        <div class="info-footer">
+            <div class="txt-block">
+                <h1 class="hover">Ombre, Elena Photoshoot 2021</h1>
+            </div>
+            <div class="txt-block">
+                <h1 class="hover">← Swipe To Navigate →</h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const currentTime = () => {
+    const element = document.querySelector("h3");
+
+    let date = new Date(),
+        hours = date.getHours(),
+        minutes = date.getMinutes(),
+        seconds = date.getSeconds();
+
+//make 12 hour clock
+let day;
+day = hours < 12 ? "AM" : "PM";
+hours = hours > 12 ? (hours - 12) : hours;
+hours = hours == 0 ? (hours = 12) : hours;
+
+//add 0 if value is less then 10
+hours = hours <10 ? `0${hours}` : hours;
+minutes = minutes < 10 ? `0${minutes}` : minutes;
+seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+element.textContent = `${hours}:${minutes}:${seconds} ${day}`;
+};
+currentTime();
+setInterval(currentTime, 50);
+
+var counting = setInterval(function() {
+  var loader = document.getElementById("loader");
+  var currval = parseInt(loader.innerHTML);
+  var Width = 100 - currval;
+  var loadscreen = document.getElementById("loadscreen");
+  loader.innerHTML = ++currval;
+  if (currval === 100) {
+    clearInterval(counting);
+    loadscreen.style.display = "none";
+  }
+  loadscreen.style.transition = "0.1s";
+  loadscreen.style.width = Width + "%";
+}, 10);
+</script>
+</html>
